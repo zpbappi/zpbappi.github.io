@@ -1,16 +1,16 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Zp Bappi
+email:       zpbappi@gmail.com
+author:      Zp Bappi
+description: "my technology scrapbook"
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://zpbappi.github.io"
 
 # Google analytics
 google_analytics:
 
 # Optional features
-animated:           false
+animated:           true
 show_related_posts: false
 show_post_footers:  false
 
@@ -45,6 +45,7 @@ share_stumbleupon: false
 share_hackernews: false
 
 # Build settings
+highlighter:  rouge
 markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
