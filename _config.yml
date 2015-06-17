@@ -45,6 +45,15 @@ share_reddit: false
 share_stumbleupon: false
 share_hackernews: false
 
+# Default front matter settings
+defaults: 
+  -
+    scope: 
+      path: "pages"
+      type: "pages"
+    values: 
+      layout: "page"
+
 # Build settings
 highlighter:  pygments
 markdown:     redcarpet

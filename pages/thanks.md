@@ -1,5 +1,4 @@
 ---
-layout:  page
 title: I hear you
 permalink: /thanks/
 ---
