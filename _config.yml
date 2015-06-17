@@ -4,7 +4,7 @@ email:       zpbappi@gmail.com
 author:      Zp Bappi
 description: "my technology scrapbook"
 baseurl:     ""
-url:         "http://zpbappi.github.io"
+url:         "http://localhost:4000"
 
 # Google analytics
 google_analytics:
