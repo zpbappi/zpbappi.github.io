@@ -4,11 +4,11 @@ email:       zpbappi@gmail.com
 author:      Zp Bappi
 description: my technology scrapbook
 baseurl:     ""
-url:         http://zpbappi.github.io
-timezone:    Australia/Sydney
+url:         "http://zpbappi.github.io"
+timezone:    "Australia/Sydney"
 
 # Google analytics
-google_analytics:
+google_analytics: 
 
 # Optional features
 animated:           true
