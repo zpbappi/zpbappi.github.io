@@ -2,9 +2,10 @@
 title:       Zp Bappi
 email:       zpbappi@gmail.com
 author:      Zp Bappi
-description: "my technology scrapbook"
+description: my technology scrapbook
 baseurl:     ""
-url:         "http://localhost:4000"
+url:         http://localhost:4000
+timezone:    Australia/Sydney
 
 # Google analytics
 google_analytics:
@@ -50,6 +51,4 @@ markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     3
-sass:
-  compressed: true
+paginate:     5
