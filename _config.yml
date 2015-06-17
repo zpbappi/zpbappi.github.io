@@ -46,7 +46,7 @@ share_stumbleupon: false
 share_hackernews: false
 
 # Build settings
-highlighter:  rouge
+highlighter:  pygments
 markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
