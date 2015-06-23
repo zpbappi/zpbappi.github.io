@@ -3,7 +3,7 @@ title: Credits
 permalink: /credits/
 ---
 
-Thank you
+Thank you...
 
 1. [GitHub](https://github.com/) - for storing my website's source codes
 2. [GitHub Pages](https://pages.github.com/) - for hosting my website
