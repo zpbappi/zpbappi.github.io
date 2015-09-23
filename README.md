@@ -1,5 +1,5 @@
 # Zp Bappi
-[Personal website](http://zpbappi.github.io) hosted in github.
+Attempt to make [personal website](http://zpbappi.github.io) hosted in github.
 
 Uses:
 - Github Pages
