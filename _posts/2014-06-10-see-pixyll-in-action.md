@@ -48,6 +48,26 @@ Here's some CSS:
 }
 {% endhighlight %}
 
+Here's some JavaScript:
+
+{% highlight js %}
+var isPresent = require('is-present')
+
+module.exports = function doStuff(things) {
+  if (isPresent(things)) {
+    doOtherStuff(things)
+  }
+}
+{% endhighlight %}
+
+Here's some HTML:
+
+{% highlight html %}
+<div class="m0 p0 bg-blue white">
+  <h3 class="h1">Hello, world!</h3>
+</div>
+{% endhighlight %}
+
 # Headings!
 
 They're responsive, and well-proportioned (in `padding`, `line-height`, `margin`, and `font-size`).
@@ -71,6 +91,8 @@ This allows your content to have the proper informational and contextual hierarc
 ### Images look great, too
 
 ![desk](https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png)
+
+_![desk](https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png)_
 
 
 ### There are also pretty colors

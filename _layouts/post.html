@@ -2,17 +2,17 @@
 layout: default
 ---
 
-{% assign minutes = content | number_of_words | divided_by: 180 %}
+{% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
 {% if minutes == 0 %}
 {% assign minutes = 1 %}
 {% endif %}
 
 <div class="post-header mb2">
   <h1>{{ page.title }}</h1>
-  <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span><br>
+  <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
   {% if page.update_date %}
-    <span class="post-meta">Updated: {{ page.update_date | date: "%b %-d, %Y" }}</span><br>
-  {% endif %}  
+    <span class="post-meta">Updated: {{ page.update_date | date: site.date_format }}</span><br>
+  {% endif %}
   <span class="post-meta small">
   {% if page.minutes %}
     {{ page.minutes }} minute read
