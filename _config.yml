@@ -1,10 +1,11 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       Zp Bappi
+email:       zpbappi@gmail.com
+author:      Zp Bappi
+description: my technology blog
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "http://zpbappi.github.io"
+timezone:    "Australia/Sydney"
 date_format: "%b %-d, %Y"
 
 # Google services
@@ -12,7 +13,7 @@ google_analytics:
 google_verification:
 
 # Optional features
-animated:             false
+animated:             true
 show_related_posts:   false
 show_post_footers:    false
 show_social_icons:    false
@@ -48,6 +49,15 @@ share_tumblr: false
 share_reddit: false
 share_stumbleupon: false
 share_hackernews: false
+
+# Default front matter settings
+defaults: 
+  -
+    scope: 
+      path: "pages"
+      type: "pages"
+    values: 
+      layout: "page"
 
 # Build settings
 markdown:     kramdown
