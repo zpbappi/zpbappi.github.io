@@ -1,10 +1,18 @@
 <div class="py2 post-footer">
-  <img src="/images/me.jpeg" alt="John Otander" class="avatar" />
+  <!-- <img src="https://s.gravatar.com/avatar/07055b34f339d6411dbdd14d89d16f20?s=80" alt="Zp Bappi" class="avatar" />-->
+  <img src="/images/me.jpg" alt="Zp Bappi" class="avatar" width="80" />
   <p>
-    Pixyll is an open-source Jekyll theme that's built by <a href="http://johnotander.com">John Otander</a>.
-    When he's not writing code and building things, he likes to ski. A. Lot.
+    <a href="{{site.url}}{{site.baseurl}}/about">Zp Bappi</a> is a technology
+    lover, great fan of designs and patterns (and, both of them together as well)
+    and likes to play with anything cool.
+    When he's not writing code or reading blogs, may be he's sleeping or eating
+    somewhere. Currently he's very excited about F# and assiting organizing <a
+    href="http://www.meetup.com/fsharpsydney/" target="_blank">F# user group
+    in Sydney</a>
   </p>
+  {% if site.twitter_username %}
   <p>
-    Follow him on <a href="https://twitter.com/4lpine">Twitter</a>.
+    Follow him on <a href="https://twitter.com/{{site.twitter_username}}">Twitter</a>.
   </p>
+  {% endif %}
 </div>

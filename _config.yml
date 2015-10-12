@@ -4,7 +4,7 @@ email:       zpbappi@gmail.com
 author:      Zp Bappi
 description: my technology blog
 baseurl:     ""
-url:         "http://zpbappi.github.io"
+url:         "http://localhost:4000"
 timezone:    "Australia/Sydney"
 date_format: "%b %-d, %Y"
 
@@ -15,8 +15,8 @@ google_verification:
 # Optional features
 animated:             true
 show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    false
+show_post_footers:    true
+show_social_icons:    true
 ajaxify_contact_form: false
 
 # Disqus post comments
@@ -24,12 +24,12 @@ ajaxify_contact_form: false
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: zpbappi
 bitbucket_username:
 stackoverflow_id:
-twitter_username:
-google_plus_id:
-linkedin_username:
+twitter_username: zpbappi
+google_plus_id: +ZpBappi
+linkedin_username: zpbappi
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -37,32 +37,32 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 share_text: 'Share this post!'
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
+share_facebook: true
+share_twitter: true
+share_googleplus: true
+share_linkedin: true
+share_digg: true
+share_tumblr: true
+share_reddit: true
+share_stumbleupon: true
+share_hackernews: true
 
 # Default front matter settings
-defaults: 
+defaults:
   -
-    scope: 
+    scope:
       path: "pages"
       type: "pages"
-    values: 
+    values:
       layout: "page"
 
 # Build settings
 markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
+#redcarpet:
+#  extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
 paginate:     4
 sass:
