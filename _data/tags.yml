@@ -1,0 +1,62 @@
+appsettings:
+  name: AppSettings
+angular-js:
+  name: AngularJS
+angular-autowrap:
+  name: Angular AutoWrap
+async:
+  name: async
+await:
+  name: await
+calculator:
+  name: Calculator
+configuration:
+  name: Configuration
+ci-cd:
+  name: CI/CD
+csharp:
+  name: C#
+datetime:
+  name: DateTime
+di:
+  name: Dependency Injection
+fsharp:
+  name: F#
+git:
+  name: Git
+git-game:
+  name: Git Game
+github:
+  name: GitHub
+javascript:
+  name: Javascript
+publish:
+  name: Publish
+rpn:
+  name: RPN
+rx:
+  name: Reactive Extension (Rx)
+tdd:
+  name: TDD
+template:
+  name: Template
+transaction:
+  name: Transaction
+transaction-scope:
+  name: Transaction Scope
+travis-ci:
+  name: Travis-CI
+underscore-js:
+  name: Underscore.js
+underscore-net:
+  name: Underscroe .NET
+unit-test:
+  name: Unit Test
+unquote:
+  name: Unquote
+validation:
+  name: Validation
+workshop:
+  name: Workshop
+wrapper:
+  name: Wrapper
