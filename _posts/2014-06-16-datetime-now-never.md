@@ -7,9 +7,7 @@ categories:
   - 'C#'
 tags:
   - csharp
-  - clock
   - datetime
-  - now
   - unit-test
 ---
 **UPDATE:**  

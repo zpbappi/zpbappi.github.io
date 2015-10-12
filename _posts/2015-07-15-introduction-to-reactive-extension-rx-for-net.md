@@ -7,7 +7,6 @@ categories:
   - 'C#'
 tags:
   - csharp
-  - reactive-extension
   - rx
   - workshop
 ---

@@ -9,7 +9,7 @@ tags:
   - appsettings
   - csharp
   - configuration
-  - dependency-injection
+  - di
   - unit-test
 ---
 When developing an ASP .NET MVC or WebAPI based application, we eventually need to read configurations from `<appSettings>` section of Web.Config file. Here is an example entry from my imaginary project:

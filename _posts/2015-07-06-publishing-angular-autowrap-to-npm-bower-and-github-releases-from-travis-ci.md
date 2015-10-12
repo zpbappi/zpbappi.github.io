@@ -6,10 +6,9 @@ permalink: /publishing-angular-autowrap-to-npm-bower-and-github-releases-from-tr
 categories:
   - Javascript
 tags:
-  - js
+  - javascript
   - github
-  - continuous-integration
-  - continuous-delivery
+  - ci-cd
   - publish
   - travis-ci
 ---

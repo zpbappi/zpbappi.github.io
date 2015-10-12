@@ -6,8 +6,8 @@ permalink: /angular-autowrap-validation-and-control-template/
 categories:
   - Javascript
 tags:
-  - angular
-  - autowrap
+  - angular-js
+  - angular-autowrap
   - template
   - validation
   - wrapper

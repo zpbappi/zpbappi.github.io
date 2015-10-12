@@ -7,7 +7,6 @@ categories:
   - 'C#'
 tags:
   - async
-  - asynchronous
   - await
   - csharp
 ---

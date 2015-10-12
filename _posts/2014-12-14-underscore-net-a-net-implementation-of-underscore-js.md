@@ -7,7 +7,6 @@ categories:
   - 'C#'
 tags:
   - csharp
-  - underscore
   - underscore-js
   - underscore-net
 ---
