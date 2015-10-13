@@ -49,7 +49,7 @@ travis-ci:
 underscore-js:
   name: Underscore.js
 underscore-net:
-  name: Underscroe .NET
+  name: Underscore.NET
 unit-test:
   name: Unit Test
 unquote:

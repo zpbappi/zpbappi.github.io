@@ -19,6 +19,9 @@ show_post_footers:    true
 show_social_icons:    true
 ajaxify_contact_form: false
 
+# Custom developed features
+show_tags:            true
+
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
