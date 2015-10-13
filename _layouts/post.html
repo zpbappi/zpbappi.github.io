@@ -27,6 +27,7 @@ layout: default
 </article>
 
 {% if site.show_tags %}
+  {% assign post = page %}
   {% include post_tags.html %}
 {% endif %}
 
