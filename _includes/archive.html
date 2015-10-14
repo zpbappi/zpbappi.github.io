@@ -5,6 +5,7 @@
 {% assign posts = site.posts | sort: 'date' | reverse %}
 {% assign first = posts | first %}
 {% assign cMonthName = "" %}
+{% assign cMonthLink = "" %}
 {% assign count = 0 %}
 
 {% for post in posts %}
@@ -13,25 +14,25 @@
   {% assign month = post.date | date: '%Y-%m' %}
   {% if year != cYear %}
     {% if cYear != "" %}
-      {{cMonthName}} ({{count | minus: 1}})</li></ul></li><li>
+      <a href="{{cMonthLink | prepend: "/archive" | prepend: site.baseurl}}">{{cMonthName}}</a> ({{count | minus: 1}})</li></ul></li><li>
       {% assign count = 1 %}
     {% endif %}
     {{year}}<ul><li>
-    {% assign cMonthName = "" %}
     {% assign cMonth = "" %}
     {% assign cYear = year %}
   {% endif %}
 
   {% if month != cMonth %}
     {% if cMonth != "" %}
-      {{cMonthName}} ({{count | minus: 1}})</li><li>
+      <a href="{{cMonthLink | prepend: "/archive" | prepend: site.baseurl}}">{{cMonthName}}</a> ({{count | minus: 1}})</li><li>
       {% assign count = 1 %}
     {% endif %}
     {% assign cMonth = month %}
   {% endif %}
   {% assign cMonthName = post.date | date: '%B' %}
+  {% assign cMonthLink = post.date | date: '/%Y/%m' %}
 {% endfor %}
-{{cMonthName}} ({{count}})
+<a href="{{cMonthLink | prepend: "/archive" | prepend: site.baseurl}}">{{cMonthName}}</a> ({{count}})
 </li>
 </ul>
 </li>
