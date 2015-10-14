@@ -1,0 +1,17 @@
+{
+  "author": "Zp Bappi (http://zpbappi.com)",
+  "name": "zpbappi.com",
+  "description": "Build script to generate tags and archive pages for Jekyll site hosted in GitHub Pages",
+  "homepage": "http://zpbappi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpbappi/zpbappi.github.io.git"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "js-yaml": "^3.4.3"
+  },
+  "license": "MIT"
+}
