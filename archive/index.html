@@ -3,32 +3,11 @@ title: Archive
 permalink: /archive/
 layout: page
 ---
-<ul>
-{% assign currentYear = "" %}
-{% assign currentMonth = "" %}
-{% assign count = 0 %}
-{% assign posts = (site.posts | sort: 'date' | reverse) %}
-{% for post in posts %}
-  {% assign count = count + 1 %}
-  {% assign year = (post.date | date: '%Y') %}
-  {% assign month = (post.date | date: '%Y-%m') %}
-  {% if currentYear != year %}
-    {% if currentYear != "" %}
-      ({{count}})</li></ul></li>
-      {% assign count = 1 %}
-      {% assign currentMonth = "" %}
-    {% endif %}
-    {% assign currentYear = year %}
-    <li>{{ currentYear }}<ul>
-  {% endif %}
-  {% if currentMonth != month %}
-    {% if currentMonth != "" %}
-      ({{count}})</li>
-    {% endif %}
-    {% assign currentMonth = month %}
-    {% assign count = 1 %}
-    <li> {{ post.date | date: '%b'}}
-  {% endif %}
-{% endfor %}
-({{count}})</li></ul></li>
-</ul>
+
+{% if site.posts.size == 0 %}
+<p>
+  Sorry, no posts. :(
+</p>
+{% else %}
+  {% include archive.html %}
+{% endif %}
