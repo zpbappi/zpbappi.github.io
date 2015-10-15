@@ -23,7 +23,7 @@ var monthNames = {
 function createTagFiles() {
   var contentTemplate = "---\nlayout: tag\ntag: %s\npermalink: /tags/%s/\n---";
   var fileNameTemplate = __dirname + "/../tags/%s.md";
-  fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'}).then(function(content){
+  return fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'}).then(function(content){
     return yaml.safeLoad(content);
   }).then(function(doc){
     var promises = Object.keys(doc).map(function(key){
@@ -48,7 +48,8 @@ function getYearAndMonth(fileName){
 };
 
 function createSingleArchiveFile(monthDir, filePath, content){
-  return fs.makeTree(monthDir, "666").then(function(){
+  console.log("Creating dir: " + monthDir);
+  return fs.makeTree(monthDir).then(function(){
     return fs.write(filePath, content);
   });
 }
@@ -57,7 +58,7 @@ function createArchiveFiles(){
   var contentTemplate = "---\nlayout: archive\nyear: '%s'\nmonth: '%s'\nmonthName: %s\n---";
   var archiveDir = __dirname + '/../archive/';
 
-  fs.list(__dirname + '/../_posts/').then(function(files){
+  return fs.list(__dirname + '/../_posts/').then(function(files){
     var data = {};
     for(var i=0; i<files.length; ++i){
       var file = files[i];
@@ -76,7 +77,7 @@ function createArchiveFiles(){
       var yearDir = archiveDir + year.toString() + '/';
       data[year].forEach(function(month){
         var monthDir = yearDir + month.toString() + '/';
-        var content = util.format(contentTemplate, year, month, monthNames[date.month]);
+        var content = util.format(contentTemplate, year, month, monthNames[month]);
         var filePath = archiveDir + year + '/' + month + "/index.html";
         promises.push(createSingleArchiveFile(monthDir, filePath, content));
       });
