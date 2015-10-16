@@ -49,7 +49,11 @@ function getYearAndMonth(fileName){
 
 function createSingleArchiveFile(monthDir, filePath, content){
   console.log("Creating dir: " + monthDir);
-  return fs.makeTree(monthDir).then(function(){
+  return fs.exists(monthDir).then(function(exists){
+    if(!exists){
+      return fs.makeTree(monthDir)
+    }
+  }).then(function(){
     return fs.write(filePath, content);
   });
 }
