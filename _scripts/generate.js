@@ -23,20 +23,23 @@ var monthNames = {
 function createTagFiles() {
   var contentTemplate = "---\nlayout: tag\ntag: %s\npermalink: /tags/%s/\n---";
   var fileNameTemplate = __dirname + "/../tags/%s.md";
-  return fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'}).then(function(content){
+  return fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'})
+  .then(function(content){
     return yaml.safeLoad(content);
-  }).then(function(doc){
+  })
+  .then(function(doc){
     var promises = Object.keys(doc).map(function(key){
       var fileName = util.format(fileNameTemplate, key);
       var content = util.format(contentTemplate, key, key);
-      return fs.exists(fileName).then(function(exists){
+      return fs.exists(fileName)
+      .then(function(exists){
         if(!exists)
           return fs.write(fileName, content);
       });
     });
     return q.all(promises);
   });
-}
+};
 
 // create archive files
 function getYearAndMonth(fileName){
@@ -48,20 +51,26 @@ function getYearAndMonth(fileName){
 };
 
 function createSingleArchiveFile(monthDir, filePath, content){
-  return fs.exists(monthDir).then(function(exists){
-    if(!exists){
-      return fs.makeTree(monthDir)
-    }
-  }).then(function(){
-    return fs.write(filePath, content);
+  return fs.exists(monthDir)
+  .then(function(exists){
+    if(!exists)
+      return fs.makeTree(monthDir);
+  })
+  .then(function(){
+    return fs.exists(filePath);
+  })
+  .then(function(exists){
+    if(!exists)
+      return fs.write(filePath, content);
   });
-}
+};
 
 function createArchiveFiles(){
   var contentTemplate = "---\nlayout: archive\nyear: '%s'\nmonth: '%s'\nmonthName: %s\n---";
   var archiveDir = __dirname + '/../archive/';
 
-  return fs.list(__dirname + '/../_posts/').then(function(files){
+  return fs.list(__dirname + '/../_posts/')
+  .then(function(files){
     var data = {};
     for(var i=0; i<files.length; ++i){
       var file = files[i];
@@ -74,7 +83,8 @@ function createArchiveFiles(){
       }
     }
     return data;
-  }).then(function(data){
+  })
+  .then(function(data){
     var promises = [];
     for(var year in data){
       var yearDir = archiveDir + year.toString() + '/';
@@ -87,7 +97,7 @@ function createArchiveFiles(){
     }
     return q.all(promises);
   });
-}
+};
 
 // main entry point
 q.all([createTagFiles(), createArchiveFiles()]).then(function(){
