@@ -31,7 +31,7 @@ function createTagFiles() {
       var content = util.format(contentTemplate, key, key);
       return fs.exists(fileName).then(function(exists){
         if(!exists)
-          fs.write(fileName, content);
+          return fs.write(fileName, content);
       });
     });
     return q.all(promises);
@@ -48,7 +48,6 @@ function getYearAndMonth(fileName){
 };
 
 function createSingleArchiveFile(monthDir, filePath, content){
-  console.log("Creating dir: " + monthDir);
   return fs.exists(monthDir).then(function(exists){
     if(!exists){
       return fs.makeTree(monthDir)
