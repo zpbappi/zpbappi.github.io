@@ -4,7 +4,7 @@ email:       zpbappi@gmail.com
 author:      Zp Bappi
 description: my technology blog
 baseurl:     ""
-url:         "http://localhost:4000"
+url:         "http://zpbappi.github.io"
 timezone:    "Australia/Sydney"
 date_format: "%b %-d, %Y"
 
