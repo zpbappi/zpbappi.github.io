@@ -100,8 +100,10 @@ function createArchiveFiles(){
 };
 
 // main entry point
-q.all([createTagFiles(), createArchiveFiles()]).then(function(){
-  console.log("Tag and Archive files creation completed successfully.")
-}).fail(function(e){
-  console.error(e);
-});
+module.exports = function(){
+  return q.all([createTagFiles(), createArchiveFiles()]).then(function(){
+    console.log("Tag and Archive files creation completed successfully.")
+  }).fail(function(e){
+    console.error(e);
+  });
+};
