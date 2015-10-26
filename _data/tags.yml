@@ -32,6 +32,8 @@ javascript:
   name: Javascript
 publish:
   name: Publish
+nodejs:
+  name: NodeJS
 rpn:
   name: RPN
 rx:
