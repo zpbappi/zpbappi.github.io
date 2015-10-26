@@ -11,7 +11,7 @@ function publishChanges(){
     return repo.commit("[ci skip] automated tag and archive page generation");
   }).
   then(function(){
-    return repo.remote_push();
+    return repo.remote_push("origin", "master");
   });
 };
 
