@@ -8,10 +8,12 @@ I also have experience with SharePoint for about 3 years- which includes both Sh
 My SharePoint expertise covers- administration, customization, business process development and branding. 
 I am fluent with html, css, javascript. I have working experience with Java and PHP too. 
 If you would like to know more about my technical expertise, my 
-[LinkedIn](http://bd.linkedin.com/in/zpbappi) or 
+[LinkedIn](http://linkedin.com/in/zpbappi) or 
 [StackOverflow](http://careers.stackoverflow.com/zpbappi)
 profile is a better place. You may also want to check out my
 [github](https://github.com/zpbappi) activity.
+
+Currently, I am working as a Senior Developer in Readify NSW. My new passion is microservices and nodejs.
 
 As a person, I am fun loving and like to take on challenges. 
 I also love to play cricket and table tennis. I like movies for leisure times. 
