@@ -13,8 +13,8 @@ If you would like to know more about my technical expertise, my
 profile is a better place. You may also want to check out my
 [github](https://github.com/zpbappi) activity.
 
-Currently, I am working as a Senior Developer in Readify NSW. My new passion is microservices and nodejs.
-
+Currently, I am working as a Senior Developer @ Readify in the NSW office. 
+My recent passion is microservices and nodejs.
 As a person, I am fun loving and like to take on challenges. 
 I also love to play cricket and table tennis. I like movies for leisure times. 
 Travelling at least once a year has become a habit. I am learning photography. That almost sums me up.
