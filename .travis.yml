@@ -1,11 +1,9 @@
 language: node_js
+
 branches:
   only: master
-install:
-- npm install -g gulp
-- npm install
 
-before_script:
+install:
 - cd _scripts/
 - npm install
 - cd ..
