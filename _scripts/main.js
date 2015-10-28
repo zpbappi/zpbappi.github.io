@@ -10,7 +10,7 @@ var repo = git(repoDir);
 
 function setAuthConfig(){
   var deferred = q.defer();
-  exec("git config credential.helper store --file=" + credentialFilePath, 
+  exec('git config credential.helper "store --file=' + credentialFilePath + '"', 
     {
         cwd: repoDir,
         encoding: "utf8",
