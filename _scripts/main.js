@@ -44,11 +44,15 @@ function publishChanges(github_personal_access_token){
   .then(function(){
     console.log("Committing changes...");
     return repo.commit("[ci skip] automated tag and archive page generation");
-  }).
-  then(function(){
+  })
+  .then(function(){
     console.log("Pushing changes...");
     return repo.remote_push("origin", "master");
-  });
+  })
+  .then(function(){
+    console.log("Printing post push status...");
+    return repo.status().then(console.log);
+  })
 };
 
 
