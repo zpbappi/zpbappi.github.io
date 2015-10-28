@@ -47,7 +47,7 @@ function publishChanges(github_personal_access_token){
   })
   .then(function(){
     console.log("Pushing changes...");
-    return repo.remote_push("origin", "master");
+    return repo.remote_push("--force --quiet origin", "HEAD:master");
   })
   .then(function(){
     console.log("Printing post push status...");
