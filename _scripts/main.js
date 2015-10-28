@@ -35,6 +35,9 @@ function publishChanges(github_personal_access_token){
     return fs.write(credentialFilePath, content);
   })
   .then(function(){
+    return repo.identify({name: "zpbappi", email: "zpbappi@gmail.com"});
+  })
+  .then(function(){
     return repo.add("-A");
   })  
   .then(function(){
