@@ -38,12 +38,15 @@ function publishChanges(github_personal_access_token){
     return repo.identify({name: "zpbappi", email: "zpbappi@gmail.com"});
   })
   .then(function(){
+    console.log("Adding all files...");
     return repo.add("-A");
   })  
   .then(function(){
+    console.log("Committing changes...");
     return repo.commit("[ci skip] automated tag and archive page generation");
   }).
   then(function(){
+    console.log("Pushing changes...");
     return repo.remote_push("origin", "master");
   });
 };
@@ -55,6 +58,7 @@ generate()
   return repo.status();
 })
 .then(function(status){
+  console.log(status);
   if(!status.clean){
     return publishChanges(process.env.GH_TOKEN);
   }
