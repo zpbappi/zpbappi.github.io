@@ -28,8 +28,14 @@ git-game:
   name: Git Game
 github:
   name: GitHub
+github-pages:
+  name: Github Pages
 javascript:
   name: Javascript
+jekyll:
+  name: Jekyll
+pixyll:
+  name: Pixyll
 publish:
   name: Publish
 nodejs:
