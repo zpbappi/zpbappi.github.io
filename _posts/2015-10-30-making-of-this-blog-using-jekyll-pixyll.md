@@ -58,13 +58,13 @@ What I did first is forked the pixyll repository. So, I ended up with a reposito
 to the `username.github.io` repo directory and added forked pixyll github repository url as another remote source named `theme`. To do that, you need
 to open your favorite command shell in the `username.github.io` directory in your computer and type the following:
 
-{% highlight shell %}
+{% highlight bash %}
 git remote add theme https://github.com/username/pixyll.git
 {% endhighlight %}
 
 Then, it is as simple as getting the theme and publishing in your blog. However, I would suggest that you create a local branch
 for the theme as well. Just type the following:
-{% highlight shell %}
+{% highlight bash %}
 git checkout -b theme
 git pull theme master
 git checkout master
