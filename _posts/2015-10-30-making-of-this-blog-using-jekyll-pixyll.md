@@ -97,6 +97,7 @@ There are just few basic header entries for jekyll on top of the post, then it's
 way, you can still write pure html in a post, although I can never think of any good reason behind that. Regardless of 
 whichever way you write your blog posts, please give attention to the file name. Your file name must be in the 
 `YYYY-MM-DD-<permalink>.<extension>` format where-
+
 - `YYYY` is the 4-digit year of your writing
 - `MM` is the 2-digit month of your writing
 - `DD` is the 2-digit day of your writing
