@@ -86,6 +86,7 @@ Pretty easy!
 
 Next thing is modifying the theme contents. You may find some files that you will want to modify the contents of for your personal blog. A list 
 of such files may include, but limited to:
+
 - _includes/footer.html
 - _includes/navigation.html
 - about.md
