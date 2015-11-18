@@ -9,7 +9,7 @@ timezone:    "Australia/Sydney"
 date_format: "%b %-d, %Y"
 
 # Google services
-google_analytics:
+google_analytics: UA-51923354-1
 google_verification:
 
 # Optional features
