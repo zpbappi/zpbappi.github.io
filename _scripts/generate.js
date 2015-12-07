@@ -21,7 +21,7 @@ var monthNames = {
 
 // create tag files
 function createTagFiles() {
-  var contentTemplate = "---\nlayout: tag\ntag: %s\npermalink: /tags/%s/\n---";
+  var contentTemplate = "---\nlayout: tag\ntag: %s\npermalink: /tags/%s/\nsitemap: false\n---";
   var fileNameTemplate = __dirname + "/../tags/%s.md";
   return fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'})
   .then(function(content){
@@ -66,7 +66,7 @@ function createSingleArchiveFile(monthDir, filePath, content){
 };
 
 function createArchiveFiles(){
-  var contentTemplate = "---\nlayout: archive\nyear: '%s'\nmonth: '%s'\nmonthName: %s\n---";
+  var contentTemplate = "---\nlayout: archive\nyear: '%s'\nmonth: '%s'\nmonthName: %s\nsitemap: false\n---";
   var archiveDir = __dirname + '/../archive/';
 
   return fs.list(__dirname + '/../_posts/')
