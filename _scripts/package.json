@@ -14,7 +14,9 @@
     "js-yaml": "^3.4.3",
     "q": "^1.4.1",
     "q-io": "^1.13.1",
-    "gift-wrapper": "^1.1.0"
+    "gift-wrapper": "^1.1.0",
+    "github": "^0.2.4",
+    "front-matter": "^2.0.1"
   },
   "license": "MIT"
 }
