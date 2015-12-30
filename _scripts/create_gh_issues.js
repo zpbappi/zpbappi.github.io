@@ -83,8 +83,9 @@ function createSingleIssue(fmAttr){
 };
 
 function saveNewCommentLinks(maps){
-    if(!maps || maps.length == 0)
-        return;
+    if(!maps || maps.length == 0) {
+        return q.when(false);
+    }
         
     return getExistingCommentLinks()
     .then(function(data){
@@ -98,6 +99,9 @@ function saveNewCommentLinks(maps){
     .then(function(data){
         var json = yaml.safeDump(data);
         return fs.write(dataFilePath, json);
+    })
+    .then(function(){
+        return q.when(true);
     });
 };
 
@@ -123,8 +127,11 @@ function main(GH_TOKEN){
     })
     .then(function(commentMaps){
         return saveNewCommentLinks(commentMaps)
-        .then(function(){
-            console.log("Comment issues are created and linked successfully.");
+        .then(function(hasCreatedNewIssue){
+            var message = hasCreatedNewIssue ? 
+                            "Comment issues are created and linked successfully." : 
+                            "No unlinked post found to create issue for commenting."
+            console.log(message);
         });
     });
 }
