@@ -122,7 +122,10 @@ function main(GH_TOKEN){
         return q.all(promiseArr);
     })
     .then(function(commentMaps){
-        return saveNewCommentLinks(commentMaps);
+        return saveNewCommentLinks(commentMaps)
+        .then(function(){
+            console.log("Comment issues are created and linked successfully.");
+        });
     });
 }
 

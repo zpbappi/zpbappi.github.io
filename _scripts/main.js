@@ -44,14 +44,14 @@ function publishChanges(github_personal_access_token){
   })  
   .then(function(){
     console.log("Committing changes...");
-    return repo.commit("[ci skip] automated tag and archive page generation");
+    return repo.commit("[ci skip] automated comment issue creation and tag+archive page generation");
   })
   .then(function(){
     console.log("Pushing changes...");
     return repo.remote_push("--force --quiet origin", "HEAD:master");
   })
   .then(function(){
-    console.log("Printing post push status...");
+    console.log("Pushed successfully.");
     return repo.status().then(console.log);
   })
 };
