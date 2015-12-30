@@ -65,7 +65,7 @@ function createSingleIssue(fmAttr){
         repo: "zpbappi.github.io",
         title: fmAttr.title,
         body: body,
-        labels: ["comments"]
+        labels: []
     };
     
     var deferred = q.defer();
