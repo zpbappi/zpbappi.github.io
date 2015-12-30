@@ -1,5 +1,5 @@
 ---
-title: 'Underscore.Net &#8211; A .NET implementation of Underscore.js'
+title: 'Underscore.Net - A .NET implementation of Underscore.js'
 author: Zp Bappi
 layout: post
 permalink: /underscore-net-a-net-implementation-of-underscore-js/

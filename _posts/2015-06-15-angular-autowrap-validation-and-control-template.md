@@ -1,5 +1,5 @@
 ---
-title: 'Angular AutoWrap &#8211; validation and control template'
+title: 'Angular AutoWrap - validation and control template'
 author: Zp Bappi
 layout: post
 permalink: /angular-autowrap-validation-and-control-template/

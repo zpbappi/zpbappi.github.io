@@ -1,5 +1,5 @@
 ---
-title: 'git-game &#8211; A playful way to try your git skills'
+title: 'git-game - A playful way to try your git skills'
 author: Zp Bappi
 layout: post
 permalink: /git-game-a-playful-way-to-try-your-git-skills/
