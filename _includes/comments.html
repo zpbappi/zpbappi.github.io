@@ -32,11 +32,13 @@
     function CommentsController($scope, $http, $filter){
         $scope.isLoading = true;
         $scope.comments = [];
-        $scope.issueLink = "https://api.github.com/repos/zpbappi/zpbappi.github.io/issues/{{issue_number}}";
+        $scope.issueLink = "https://github.com/zpbappi/zpbappi.github.io/issues/{{issue_number}}";
+        
+        var apiLink = "https://api.github.com/repos/zpbappi/zpbappi.github.io/issues/{{issue_number}}/comments";
         
         function init(){
             $http
-            .get($scope.issueLink + "/comments", {headers: {Accept: "application/vnd.github.full+json"}})
+            .get(apiLink, {headers: {Accept: "application/vnd.github.full+json"}})
             .then(function(res){
                 return $filter("orderBy")(res.data, "created_at");
             })
