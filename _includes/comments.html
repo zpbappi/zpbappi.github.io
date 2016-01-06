@@ -1,0 +1,61 @@
+{% assign issue_number = site.data.commentrefs[post.permalink] %}
+{% raw %}
+<div class="comments" ng-app="blog-comments" ng-controller="CommentsController">
+    <h4>Comments</h4>
+    <div ng-if="comments.length > 0 || isLoading">
+        <span class="small"><a ng-href="{{issueLink}}"><i class="fa fa-plus"></i> Add a comment</a> with your GitHub account</span>
+    </div>
+    <div class="loading" ng-if="isLoading">
+        <i class="fa fa-spinner fa-2"></i> Loading comments...
+    </div>
+    <div ng-if="comments.length == 0 && !isLoading" class="no-comments">
+        No comments yet on this post. Why don't you <a ng-href="{{issueLink}}">be the first one</a>?
+    </div>
+    <div ng-if="comments.length > 0 && !isLoading" ng-repeat="c in comments" class="comment">
+        <div class="comment-header">
+            <div class="comment-avatar">
+                <span class="dummy"></span>
+                <img ng-src="{{c.user.avatar_url}}" />
+            </div>
+            <a class="commenter" href="https://www.github.com/{{c.user.login}}">{{c.user.login}}</a>
+            <time datetime="{{c.created_at}}">commented on {{c.created_at | date: "MMM dd, yyyy '('hh:mm a 'GMT'Z')'"}}</time>
+        </div>
+        <div class="comment-body" ng-bind-html="c.body_html | rawHtml">
+        </div>
+    </div>
+</div>
+{% endraw %}
+
+<script type="text/javascript">
+(function(ng){
+    
+    function CommentsController($scope, $http, $filter){
+        $scope.isLoading = true;
+        $scope.comments = [];
+        $scope.issueLink = "https://api.github.com/repos/zpbappi/zpbappi.github.io/issues/{{issue_number}}";
+        
+        function init(){
+            $http
+            .get($scope.issueLink + "/comments", {headers: {Accept: "application/vnd.github.full+json"}})
+            .then(function(res){
+                return $filter("orderBy")(res.data, "created_at");
+            })
+            .then(function(comments){
+                $scope.isLoading = false;
+                $scope.comments = comments;
+            });
+        };
+        
+        init();
+    };
+    
+    ng
+    .module("blog-comments", [])
+    .controller("CommentsController", ["$scope", "$http", "$filter", CommentsController])
+    .filter('rawHtml', ['$sce', function($sce){
+        return function(val) {
+            return $sce.trustAsHtml(val);
+        };
+    }]);
+})(angular);
+</script>

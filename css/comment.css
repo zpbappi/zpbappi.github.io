@@ -1,0 +1,56 @@
+.comments{
+    display: block;
+}
+
+.comments .comment{
+    display: block;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+}
+
+.comments .no-comments{
+    margin-top: 20px;
+}
+
+.comment-header{
+    display: block;
+    background-color: lightgray;
+    font-size: .9em;
+}
+
+.comment-header time{
+    color: white;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.comment-avatar {
+    display: inline-block;
+    height: 100%;
+    margin: 5px;
+}
+
+.comment-avatar .dummy{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.comment-avatar img {
+    vertical-align: middle;
+    background-color: lightgray;
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+}
+
+.comment-body{
+    margin-left: 5px;
+}
+
+.comment-body p{
+    margin: 0px 5px;
+    padding: 0px;
+    font-size: 0.9em;
+    line-height: 2em;
+}
