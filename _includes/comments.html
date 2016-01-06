@@ -9,7 +9,7 @@
         <i class="fa fa-spinner fa-2"></i> Loading comments...
     </div>
     <div ng-if="comments.length == 0 && !isLoading" class="no-comments">
-        No comments yet on this post. Why don't you <a ng-href="{{issueLink}}">be the first one</a>?
+        No comments yet on this post. Why don't you <a ng-href="{{issueLink}}">be the first one</a>? By the way, you will need a GitHub account to comment.
     </div>
     <div ng-if="comments.length > 0 && !isLoading" ng-repeat="c in comments" class="comment">
         <div class="comment-header">
