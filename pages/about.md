@@ -13,11 +13,13 @@ If you would like to know more about my technical expertise, my
 profile is a better place. You may also want to check out my
 [github](https://github.com/zpbappi) activity.
 
-Currently, I am working as a Senior Developer @ Readify in the NSW office. 
-My recent passion is microservices and nodejs.
+I am also certified as a [Professional Scrum Master](https://www.scrum.org/User-Profile/userId/155925).
+
+Currently, I am working as a Senior Developer @ Readify in Sydney, Australia. 
+My recent passion is tdd, f#, microservices and nodejs.
 As a person, I am fun loving and like to take on challenges. 
 I also love to play cricket and table tennis. I like movies for leisure times. 
 Travelling at least once a year has become a habit. I am learning photography. That almost sums me up.
 
-Want to [contact]({{site.baseurl}}/contact/) me? Just drop me a line or few @ zpbappiATgmailDOTcom or gmailATzpbappiDOTcom. 
-Trust me, it works both ways. I will get back to you as soon as I can.
+Want to [contact]({{site.baseurl}}/contact/) me? Just drop me a line or few @ zpbappiATgmailDOTcom. 
+I will get back to you as soon as I can.
