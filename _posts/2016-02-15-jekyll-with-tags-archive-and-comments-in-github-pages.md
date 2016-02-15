@@ -1,3 +1,12 @@
+---
+layout: post
+title: Jekyll with Tags, Archive and Comments in GitHub Pages
+permalink: /jekyll-with-tags-archive-and-comments-in-github-pages/
+tags:
+  - jekyll
+  - github
+  - github-pages
+---
 In my [previous post](/making-of-this-blog-using-jekyll-pixyll/), I have demonstrated how we can easily setup a Jekyll blog hosted in GitHub Pages. 
 I will explain how I implemented the automatic tag and archive page generation within the constraints imposed by GitHub Pages. Also, I will show 
 how I ended up using GitHub to store and serve my blog comments as well.
