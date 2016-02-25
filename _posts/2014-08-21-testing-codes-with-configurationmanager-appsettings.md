@@ -83,7 +83,7 @@ public class MyServiceTests
             otherDependency = Substitute.For<IMyOtherDependency>();
 
             var appSettings = Substitute.For<IAppSettings>();
-            appSettings["app.name"].Returns("My Test Applicatin");
+            appSettings["app.name"].Returns("My Test Application");
 
             myService = new MyService(otherDependency, appSettings);
         };
