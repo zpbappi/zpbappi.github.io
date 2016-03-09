@@ -8,7 +8,7 @@ tags:
   - csharp
 ---
 
-I have recently written a Money class in C# with generic and multi-currency support.
+I have recently [written](https://github.com/zpbappi/money) a Money class in C# with generic and multi-currency support.
 
 ## Why should I use it?
 It is supposed to be different than the existing ones.
