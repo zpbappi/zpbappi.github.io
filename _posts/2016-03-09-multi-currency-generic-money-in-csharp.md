@@ -10,14 +10,6 @@ tags:
 
 I have recently written a Money class in C# with generic and multi-currency support.
 
-## Where do I get it?
-You can simply add a reference to 
-[this nuget package](https://www.nuget.org/packages/Multi-Currency-Money/)
-and start using it. 
-
-Oh wait, did you mean _get the code_? You will find the code in 
-[this github repository](https://github.com/zpbappi/money).  
-
 ## Why should I use it?
 It is supposed to be different than the existing ones.
 
@@ -53,6 +45,14 @@ You can apply the same principle to support conversion to and from any data type
 Good question. Yes, you can specify the currency when constructing a Money object. 
 If you do not specify a currency, the currency from the your machine's currenctly
 set UI culture will be used.
+
+## Okay. Where do I get it?
+You can simply add a reference to 
+[this nuget package](https://www.nuget.org/packages/Multi-Currency-Money/)
+and start using it. 
+
+Oh wait, did you mean _get the code_? You will find the code in 
+[this github repository](https://github.com/zpbappi/money).
 
 ## Can I see some code now?
 Sure. Here is a basic example:
@@ -233,6 +233,23 @@ rather serves from memory.
 Best thing about it, you don't even have to
 think about any of these when you are writing your own currency converter.
 
+## I don't like typing Money<T> all the time. What do I do?
+Okay. If you have decided on a data type you will be using to 
+represent the Money amount (and, it better be `decimal`),
+here's is a nice trick you can do.
+
+Inside your namespace declaration, type:
+{% highlight csharp %}
+using Money = Money<decimal>;
+{% endhighlight %}
+
+Then, you will be able to use it in a simplified for as:
+{% highlight csharp %}
+var m1 = new Money(42m, "USD");
+var m2 = new Money(100m, "AUD");
+// and so on...
+{% endhighlight %}
+
 ## So far, cool. However, why don't you have XYZ feature?
 Sorry, I didn't think about XYZ before. 
 Please [create an issue](https://github.com/zpbappi/money/issues) 
@@ -246,5 +263,9 @@ as a bug fix. Otherwise, one of contributors will fix that. Thank you in advance
 for reporting it though.
 
 ## Summary
-That's all folks. Hopefully, you feel like creating your own forex business and 
-ready to take on the world now.
+That's all folks. Hopefully, you feel like creating your own forex business now.
+
+Once again, for your ease of access:
+
+- [Money nuget package](https://www.nuget.org/packages/Multi-Currency-Money/) (called, 'Multi currency money', as the name 'Money' was already taken by someone else)
+- [Money source code](https://github.com/zpbappi/money)
