@@ -16,6 +16,8 @@ ci-cd:
   name: CI/CD
 csharp:
   name: C#
+currency:
+  name: Currency
 datetime:
   name: DateTime
 di:
@@ -34,12 +36,14 @@ javascript:
   name: Javascript
 jekyll:
   name: Jekyll
+money:
+  name: Money
+nodejs:
+  name: NodeJS
 pixyll:
   name: Pixyll
 publish:
   name: Publish
-nodejs:
-  name: NodeJS
 rpn:
   name: RPN
 rx:
