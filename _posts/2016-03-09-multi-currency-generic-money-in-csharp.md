@@ -243,7 +243,7 @@ Inside your namespace declaration, type:
 using Money = Money<decimal>;
 {% endhighlight %}
 
-Then, you will be able to use it in a simplified for as:
+Then, you will be able to use it in a simplified form as:
 {% highlight csharp %}
 var m1 = new Money(42m, "USD");
 var m2 = new Money(100m, "AUD");
@@ -253,19 +253,19 @@ var m2 = new Money(100m, "AUD");
 ## So far, cool. However, why don't you have XYZ feature?
 Sorry, I didn't think about XYZ before. 
 Please [create an issue](https://github.com/zpbappi/money/issues) 
-in github with the feature description. 
+in github with some description of the XYZ feature. 
 Then we can continue discussion there and decide whether we can actually build it.
 
 ## You have a bug. How do I fix it?
-Same as above. Please [create an issue](https://github.com/zpbappi/money/issues)
-and if you are interested, you will probably be asked to create a pull request 
-as a bug fix. Otherwise, one of contributors will fix that. Thank you in advance
+Please [create an issue](https://github.com/zpbappi/money/issues) first.
+If you are interested, you will probably be requested to create a pull request 
+to fix the bug. Otherwise, one of contributors will fix that. Thank you in advance
 for reporting it though.
 
 ## Summary
-That's all folks. Hopefully, you feel like creating your own forex business now.
-
 Once again, for your ease of access:
 
-- [Money nuget package](https://www.nuget.org/packages/Multi-Currency-Money/) (called, 'Multi currency money', as the name 'Money' was already taken by someone else)
+- [Money nuget package](https://www.nuget.org/packages/Multi-Currency-Money/) (called 'Multi currency money', as the name 'Money' was already taken by someone else)
 - [Money source code](https://github.com/zpbappi/money)
+
+That's all folks. Hopefully, you feel like creating your own forex business now.
