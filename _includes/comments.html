@@ -18,7 +18,7 @@
                 <img ng-src="{{c.user.avatar_url}}" />
             </div>
             <a class="commenter" href="https://www.github.com/{{c.user.login}}">{{c.user.login}}</a>
-            <time datetime="{{c.created_at}}">commented on {{c.created_at | date: "MMM dd, yyyy '('hh:mm a 'GMT'Z')'"}}</time>
+            <time datetime="{{c.created_at}}" title="{{dateTitle(c.created_at)}}">on {{c.created_at | date: "MMM dd, yyyy"}}</time>
         </div>
         <div class="comment-body" ng-bind-html="c.body_html | rawHtml">
         </div>
@@ -35,6 +35,10 @@
         $scope.issueLink = "https://github.com/zpbappi/zpbappi.github.io/issues/{{issue_number}}";
         
         var apiLink = "https://api.github.com/repos/zpbappi/zpbappi.github.io/issues/{{issue_number}}/comments";
+        
+        $scope.dateTitle = function(date){
+            return $filter("date")(date, "MMMM dd, yyyy '('hh:mm a 'GMT'Z')'")
+        };
         
         function init(){
             $http
