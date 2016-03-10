@@ -240,7 +240,7 @@ rather serves from memory.
 Best thing about it, you don't even have to
 think about any of these when you are writing your own currency converter.
 
-## I don't like typing Money<T> all the time. What do I do?
+## I don't like typing Money&lt;T&gt; all the time. What do I do?
 Okay. If you have decided on a data type you will be using to 
 represent the Money amount (and, it better be `decimal`),
 here's is a nice trick you can do.
