@@ -23,6 +23,13 @@ However, the custom data type needs to satisfy very few things, namely-
 - It must be comparable with itself (_you know, to sort or event to tell that an amount is greater than the other_)
 - If you want to add/subtract/multiply/divide any built-in type (say, `int`) with Money of your custom type,
 you have to implement implicit conversion between your type and the target type.
+- You will also need to implement the operators in your custom data type. Not all of them, 
+just the ones you will be using. For example, if your operations are limited to addition and subtraction 
+of money objects, then you only have to implement `+` and `-` operators in your custom data type 
+_[thanks to [aleksei](https://twitter.com/dekko_ru) for his review]_.
+- Finally, it is not recommended to implement your own numeric data type, unless you absolutely have to. 
+This can be a very tricky thing to do- think about the operators, comparision and implicit casting into other types.
+In most cases, `decimal` will be more than enough.
 
 Technically speaking, if your custom type is `CustomNumber`, then the following restriction applies on `CustomNumber`:
 {% highlight csharp %}
