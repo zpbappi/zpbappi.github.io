@@ -154,7 +154,7 @@ public class MyCurrencyConverter : ICurrencyConverter<decimal>
     // the method of our interest 
     public decimal Convert(decimal fromAmount, string fromCurrency, string toCurrency)
     {
-        // return the converted amount into decimal in this case
+        // return the converted amount as decimal in this case
     }
     
     // ... other codes, if you have any
