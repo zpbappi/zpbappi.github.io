@@ -7,6 +7,7 @@
   color: #333;
   font-size: $h3;
   font-weight: 300;
+  background-image: none;
 }
 
 .site-header .site-title {
@@ -46,9 +47,4 @@
 
 .site-header .site-nav {
   text-align: center;
-}
-
-.social-icons .left, .social-icons .right {
-  text-align: center;
-  float: none;
 }
