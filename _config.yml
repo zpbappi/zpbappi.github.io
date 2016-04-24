@@ -125,3 +125,5 @@ sass:
 gems:
   - jekyll-sitemap
   - jekyll-paginate
+# https://github.com/jekyll/jekyll/issues/2938
+exclude: [vendor]

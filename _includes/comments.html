@@ -1,6 +1,6 @@
 {% assign issue_number = site.data.commentrefs[post.permalink] %}
 {% raw %}
-<div class="comments" ng-app="blog-comments" ng-controller="CommentsController">
+<div class="comments plain_links" ng-app="blog-comments" ng-controller="CommentsController">
     <h4>Comments</h4>
     <div ng-if="comments.length > 0 || isLoading">
         <span class="small"><a ng-href="{{issueLink}}"><i class="fa fa-plus"></i> Add a comment</a> with your GitHub account</span>
