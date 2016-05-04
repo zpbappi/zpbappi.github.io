@@ -19,7 +19,7 @@ Stanford University on Coursera. I was extremely impressed and inspired by Andre
 by my performance). I am sure that I will be looking to switch my career 
 into machine learning in near future. I was so happy after completing the course that I paid for the 
 [certificate](https://www.coursera.org/account/accomplishments/certificate/5FDMPMMW47RL) 
-so that I can showcase it everywhere. 
+to showcase it everywhere. 
 
 Currently, I am working as a Senior Developer @ Readify in Sydney, Australia. 
 My recent passion is tdd, f#, microservices, nodejs and python (yeah, all of them). 
