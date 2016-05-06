@@ -21,7 +21,7 @@ var monthNames = {
 
 // create tag files
 function createTagFiles() {
-  var contentTemplate = "---\nlayout: tag\ntitle: Posts with tag %s\ntag: %s\npermalink: /tags/%s/\nsitemap: false\n---";
+  var contentTemplate = "---\nlayout: tag\ntitle: Posts with tag %s\nsummary: posts with tag %s\ntag: %s\npermalink: /tags/%s/\nsitemap: false\n---";
   var fileNameTemplate = __dirname + "/../tags/%s.md";
   return fs.read(__dirname + '/../_data/tags.yml', {'charset': 'utf8', 'flags': 'r'})
   .then(function(content){
@@ -31,7 +31,7 @@ function createTagFiles() {
     var promises = Object.keys(doc).map(function(key){
       var tagText = doc[key].name;
       var fileName = util.format(fileNameTemplate, key);
-      var content = util.format(contentTemplate, tagText, key, key);
+      var content = util.format(contentTemplate, tagText, tagText, key, key);
       return fs.exists(fileName)
       .then(function(exists){
         if(!exists)
@@ -67,7 +67,7 @@ function createSingleArchiveFile(monthDir, filePath, content){
 };
 
 function createArchiveFiles(){
-  var contentTemplate = "---\nlayout: archive\ntitle: Posted in %s\nyear: '%s'\nmonth: '%s'\nmonthName: %s\nsitemap: false\n---";
+  var contentTemplate = "---\nlayout: archive\ntitle: Posted in %s\nsummary: posted in %s\nyear: '%s'\nmonth: '%s'\nmonthName: %s\nsitemap: false\n---";
   var archiveDir = __dirname + '/../archive/';
 
   return fs.list(__dirname + '/../_posts/')
@@ -91,7 +91,7 @@ function createArchiveFiles(){
       var yearDir = archiveDir + year.toString() + '/';
       data[year].forEach(function(month){
         var monthDir = yearDir + month.toString() + '/';
-        var content = util.format(contentTemplate, monthNames[month] + " " + year, year, month, monthNames[month]);
+        var content = util.format(contentTemplate, monthNames[month] + " " + year, monthNames[month] + " " + year, year, month, monthNames[month]);
         var filePath = archiveDir + year + '/' + month + "/index.html";
         promises.push(createSingleArchiveFile(monthDir, filePath, content));
       });
