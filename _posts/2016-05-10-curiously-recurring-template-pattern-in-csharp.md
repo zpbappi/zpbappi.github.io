@@ -240,7 +240,7 @@ public abstract class Base<T> where T : Base<T>
 ```
 
 Well, now if you look carefully, this is actaully the CRTP in C#.
-I like to follow one very simply convention for CRTP. That is, I name the 
+I like to follow one very simple convention for CRTP. That is, I name the 
 generic type parameter `TDerived` rather than just `T`. That gives me (or, the user of the code)
 an indication that the generic type parameter is expecting the derived type and it is implemented as CRTP.
 
@@ -321,7 +321,7 @@ public class BinaryTree : AbstractSinglyLinkedList<BinaryTree>
 
     public void AddRight(int right)
     {
-        this.Left = new BinaryTree(base.Parent, right);
+        this.Right = new BinaryTree(base.Parent, right);
     }
 }
 ```
@@ -383,7 +383,7 @@ Here is how it may look like:
 
 ```csharp
 public abstract class AlgorithmBase<TDerived>
-    where TDerived : AlgorithmBase
+    where TDerived : AlgorithmBase<TDerived>
 {
     public TDerived Run()
     {
