@@ -16,10 +16,14 @@ ci-cd:
   name: CI/CD
 csharp:
   name: C#
+crtp:
+  name: CRTP
 currency:
   name: Currency
 datetime:
   name: DateTime
+design-pattern:
+  name: Design Pattern
 di:
   name: Dependency Injection
 fsharp:
