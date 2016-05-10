@@ -33,7 +33,7 @@ But, wait again... what does it even mean... is that possible... how does it eve
 
 Don't worry if you are stuck somewhere above. I know the feeling.
 It is difficult to understand from the definition. The complex
-recurring relation became clear to when I was started looking at the problem it was trying to solve. 
+recurring relation became clear to me when I started looking at the problems it was trying to solve. 
 Let's have a look at that. But, before you start reading further, forget about CRTP
 and focus on the problem first.
 
