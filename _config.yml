@@ -115,12 +115,16 @@ text:
 
 # Build settings
 markdown:     kramdown
+kramdown:
+  input: GFM
 #redcarpet:
 #  extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
 paginate:     4
 sass:
   compressed: true
+
+highlighter: rouge
 
 gems:
   - jekyll-sitemap
