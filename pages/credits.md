@@ -10,5 +10,5 @@ Thank you...
 3. [kramdown](http://kramdown.gettalong.org/) - for transforming my contents
 3. [Jekyll](http://jekyllrb.com/) - for building my website
 4. [Pixyll](https://github.com/johnotander/pixyll) - for styling my website
-5. [Pygments](http://pygments.org/) - for styling my codes
+5. [Rouge](http://rouge.jneen.net/) - for styling my codes
 6. [Me]({{site.baseurl}}/about) - for putting all these cool technologies together
