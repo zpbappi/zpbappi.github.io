@@ -32,12 +32,12 @@ This can be a very tricky thing to do- think about the operators, comparision an
 In most cases, `decimal` will be more than enough.
 
 Technically speaking, if your custom type is `CustomNumber`, then the following restriction applies on `CustomNumber`:
-{% highlight csharp %}
+```csharp
 ... where CustomNumber : struct, IComparable, IComparable<CustomNumber>
-{% endhighlight %}
+```
 And, if you want to convert `int` number into your custom type `CustomNumber`, or want to add any `int` number
 with Money with amount of type `CustomNumber`, then you should also implement implicit conversion like:
-{% highlight csharp %}
+```csharp
 public static implicit operator CustomNumber(int number)
 {
     CustomNumber myNumber;
@@ -45,7 +45,7 @@ public static implicit operator CustomNumber(int number)
      // and set the value in myNumber variable
      return myNumber; 
 }
-{% endhighlight %}
+```
 You can apply the same principle to support conversion to and from any data type you want. 
 
 ## What about currency?
@@ -68,61 +68,61 @@ Oh wait, did you mean _get the code_? You will find the code in
 
 ## Can I see some code now?
 Sure. Here is a basic example:
-{% highlight csharp %}
+```csharp
 // create money with decimal type of amount in my currency
 var localMoney = new Money<decimal>(100m);
 
 // create Australian dollars 
-var aud = new Money<decimal>(42m, "AUD"); 
-{% endhighlight %}
+var aud = new Money<decimal>(42m, Currency.AUD); 
+```
 
 Each money object exposes the currency (always in upper case) and the amount it represents. 
 Money objects are comparable with each other, only if they are of same currency.
 They also support unary operation as well as binary operations with built-in data types.
-{% highlight csharp %}
+```csharp
 // currency and amount properties
-var m = new Money<decimal>(100m, "aud");
-Assert.AreEqual("AUD", m.Currency);
+var m = new Money<decimal>(100m, Currency.AUD);
+Assert.AreEqual(Currency.AUD, m.Currency);
 Assert.AreEqual(100m, m.Amount);
 
 // USD and AUD are not the same
-var usd = new Money<decimal>(100m, "USD");
-var aud = new Money<decimal>(100m, "AUD");
+var usd = new Money<decimal>(100m, Currency.USD);
+var aud = new Money<decimal>(100m, Currency.AUD);
 Assert.AreNotEqual(usd, aud);
 
 // unary operation on money
-var intMoney = new Money<int>(41, "EUR");
+var intMoney = new Money<int>(41, Currency.EUR);
 intMoney++;
 Assert.AreEqual(42, intMoney.Amount);
-Assert.AreEqual("EUR", intMoney.Currency);
+Assert.AreEqual(Currency.EUR, intMoney.Currency);
 
 // binary operation with numbers
-var money = new Money<decimal>(100m, "AUD");
+var money = new Money<decimal>(100m, Currency.AUD);
 var result = money - 58m;
 Assert.AreEqual(42m, result.Amount);
 result = 100.5m + result;
 Assert.AreEqual(142.5m, result.Amount);
-Assert.AreEqual("AUD", result.Currency);
-{% endhighlight %}
+Assert.AreEqual(Currency.AUD, result.Currency);
+```
 
 ## What if I have different currencies?
 Well, that is the main purpose behind this project. 
 Regardless of your currencies of the money objects, you can actually combine different
 money objects together using binary operators (`+`, `-`, `*`, `/`, and `%` to be exact).
 What you get back as a result is a `Wallet`. Let me show you what I mean.
-{% highlight csharp %}
-var m1 = Money<decimal>(100m, "AUD");
-var m2 = Money<decimal>(-42m, "AUD");
-var m3 = Money<decimal>(3.1415m, "USD");
-var m4 = Money<decimal>(1m, "EUR");
-var m5 = Money<decimal>(8m, "GBP");
+```csharp
+var m1 = Money<decimal>(100m, Currency.AUD);
+var m2 = Money<decimal>(-42m, Currency.AUD);
+var m3 = Money<decimal>(3.1415m, Currency.USD);
+var m4 = Money<decimal>(1m, Currency.EUR);
+var m5 = Money<decimal>(8m, Currency.GBP);
 
 var wallet1 = m1 + m2;
 var wallet2 = wallet1 - m3;
 
 // or if you are really insane
 var crazyWallet = (m1 % m5) + ((m2 * 3.5m) / m4) - (m3 * 9m);
-{% endhighlight %}
+```
 
 ## Okay, what do I do with a wallet?
 You get the result. There are two different ways to get result in two possible scenarios-
@@ -132,14 +132,14 @@ You get the result. There are two different ways to get result in two possible s
 
 The first case is pretty easy and simple. In this case, you know for sure that you will only be dealing with 
 single currency. After combining money object into a wallet, you get the result as:
-{% highlight csharp %}
-var m1 = Money<decimal>(100m, "AUD");
-var m2 = Money<decimal>(-42m, "AUD");
+```csharp
+var m1 = Money<decimal>(100m, Currency.AUD);
+var m2 = Money<decimal>(-42m, Currency.AUD);
 var wallet = m1 + m2; // or any other insane combination of any number of money objects
 var resultingMoney = wallet.EvaluateWithoutConversion();
 Assert.AreEqual(58m, resultingMoney.Amount);
-Assert.AreEqual("AUD", resultingMoney.Currency);
-{% endhighlight %}
+Assert.AreEqual(Currency.AUD, resultingMoney.Currency);
+```
 
 Pretty straight forward. However, for the second case, the `Wallet` actually needs to know
 how to convert between currencies. Now, this is a sacred knowledge I am ___NOT___ willing 
@@ -149,7 +149,7 @@ the interface `ICurrencyConverter<T>` available in the `Money` namespace. The ge
 `T` here is actually the type you are using to represent money. As an example, if you are
 using `decimal` (a pretty good choice for almost all real life scenarios) to represent
 the amount in `Money`, then your currency converter should look something like:
-{% highlight csharp %}
+```csharp
 public class MyCurrencyConverter : ICurrencyConverter<decimal>
 {
     // ... your constructor
@@ -157,34 +157,34 @@ public class MyCurrencyConverter : ICurrencyConverter<decimal>
     // ... other code and properties, if you need
     
     // the method of our interest 
-    public decimal Convert(decimal fromAmount, string fromCurrency, string toCurrency)
+    public decimal Convert(decimal fromAmount, Currency fromCurrency, Currency toCurrency)
     {
         // return the converted amount as decimal in this case
     }
     
     // ... other codes, if you have any
 }
-{% endhighlight %}
+```
 
 With the above implementation (I mean, when you actually implement it), you 
 are now ready to do any multi-currency operation like:
 
-{% highlight csharp %}
-var m1 = Money<decimal>(100m, "AUD");
-var m2 = Money<decimal>(-42m, "AUD");
-var m3 = Money<decimal>(3.1415m, "USD");
-var m4 = Money<decimal>(1m, "EUR");
-var m5 = Money<decimal>(8m, "GBP");
+```csharp
+var m1 = Money<decimal>(100m, Currency.AUD);
+var m2 = Money<decimal>(-42m, Currency.AUD);
+var m3 = Money<decimal>(3.1415m, Currency.USD);
+var m4 = Money<decimal>(1m, Currency.EUR);
+var m5 = Money<decimal>(8m, Currency.GBP);
 
 
 var multinationalWallet = (m1 % m5) + ((m2 * 3.5m) / m4) - (m3 * 9m);
 var currencyConverter = new MyCurrencyConverter();
-var resultingMoneyInAUD = multinationalWallet.Evaluate(currencyConverter, "AUD");
+var resultingMoneyInAUD = multinationalWallet.Evaluate(currencyConverter, Currency.AUD);
 
 var expectedAmount = I_AM_NOT_SURE_WHAT_THE_VALUE_IS_YOU_FIGURE_IT_OUT;
 Assert.AreEqual(expectedAmount, resultingMoneyInAUD.Amount);
-Assert.AreEqual("AUD", resultingMoneyInAUD.Currency);
-{% endhighlight %}
+Assert.AreEqual(Currency.AUD, resultingMoneyInAUD.Currency);
+```
 
 ## Will you provide a default currency converter with Money?
 No.
@@ -215,7 +215,7 @@ they are likely to be slow. So, calling it to conver `10 USD -> AUD` and then ag
 `3 USD -> AUD` seems like a very bad choice. To eliminate this issue of your
 currency converter (!), I have provided a magical wrapper class called `CachedCurrencyConverter`.
 The way you use it is:
-{% highlight csharp %}
+```csharp
 public class MyCurrencyConverter : ICurrencyConverter<decimal>
 {
     // ... your constructor
@@ -223,7 +223,7 @@ public class MyCurrencyConverter : ICurrencyConverter<decimal>
     // ... other code and properties, if you need
     
     // the method of our interest 
-    public decimal Convert(decimal fromAmount, string fromCurrency, string toCurrency)
+    public decimal Convert(decimal fromAmount, Currency fromCurrency, Currency toCurrency)
     {
         // return the converted amount into decimal in this case
     }
@@ -235,8 +235,8 @@ public class MyCurrencyConverter : ICurrencyConverter<decimal>
 var myConverter = new MyCurrencyConverter();
 var cachedConverter = new CachedCurrencyConverter<decimal>(myConverter);
 
-var resultingMoney = wallet.Evaluate(cachedConverter, "AUD");
-{% endhighlight %}
+var resultingMoney = wallet.Evaluate(cachedConverter, Currency.AUD);
+```
 
 It does not require you to write too much code, but improves the performace of 
 your currency converter. Because, it queries for a currency pair (e.g. USD to AUD) only once
@@ -251,16 +251,16 @@ represent the Money amount (and, it better be `decimal`),
 here's is a nice trick you can do.
 
 Inside your namespace declaration, type:
-{% highlight csharp %}
+```csharp
 using Money = Money<decimal>;
-{% endhighlight %}
+```
 
 Then, you will be able to use it in a simplified form as:
-{% highlight csharp %}
-var m1 = new Money(42m, "USD");
-var m2 = new Money(100m, "AUD");
+```csharp
+var m1 = new Money(42m, Currency.USD);
+var m2 = new Money(100m, Currency.AUD);
 // and so on...
-{% endhighlight %}
+```
 
 ## So far, cool. However, why don't you have XYZ feature?
 Sorry, I didn't think about XYZ before. 
