@@ -53,6 +53,11 @@ Good question. Yes, you can specify the currency when constructing a Money objec
 If you do not specify a currency, the currency from the your machine's currenctly
 set UI culture will be used.
 
+In v1.0.0 and v1.1.0, you can specify currency as `string`. However, _ISO 4217_ currency codes 
+are introduced as enums in v1.1.0 and methods taking string currency as input are marked as 
+obsolete. String currency will be removed completely in future version. In short, 
+you should use `Currency.AUD` instead of `"AUD"`.
+
 ## Okay. Where do I get it?
 You can simply add a reference to 
 [this nuget package](https://www.nuget.org/packages/Multi-Currency-Money/)
