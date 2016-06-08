@@ -32,11 +32,13 @@ This can be a very tricky thing to do- think about the operators, comparision an
 In most cases, `decimal` will be more than enough.
 
 Technically speaking, if your custom type is `CustomNumber`, then the following restriction applies on `CustomNumber`:
+
 ```csharp
 ... where CustomNumber : struct, IComparable, IComparable<CustomNumber>
 ```
 And, if you want to convert `int` number into your custom type `CustomNumber`, or want to add any `int` number
 with Money with amount of type `CustomNumber`, then you should also implement implicit conversion like:
+
 ```csharp
 public static implicit operator CustomNumber(int number)
 {
@@ -68,6 +70,7 @@ Oh wait, did you mean _get the code_? You will find the code in
 
 ## Can I see some code now?
 Sure. Here is a basic example:
+
 ```csharp
 // create money with decimal type of amount in my currency
 var localMoney = new Money<decimal>(100m);
@@ -79,6 +82,7 @@ var aud = new Money<decimal>(42m, Currency.AUD);
 Each money object exposes the currency (always in upper case) and the amount it represents. 
 Money objects are comparable with each other, only if they are of same currency.
 They also support unary operation as well as binary operations with built-in data types.
+
 ```csharp
 // currency and amount properties
 var m = new Money<decimal>(100m, Currency.AUD);
@@ -110,6 +114,7 @@ Well, that is the main purpose behind this project.
 Regardless of your currencies of the money objects, you can actually combine different
 money objects together using binary operators (`+`, `-`, `*`, `/`, and `%` to be exact).
 What you get back as a result is a `Wallet`. Let me show you what I mean.
+
 ```csharp
 var m1 = Money<decimal>(100m, Currency.AUD);
 var m2 = Money<decimal>(-42m, Currency.AUD);
@@ -132,6 +137,7 @@ You get the result. There are two different ways to get result in two possible s
 
 The first case is pretty easy and simple. In this case, you know for sure that you will only be dealing with 
 single currency. After combining money object into a wallet, you get the result as:
+
 ```csharp
 var m1 = Money<decimal>(100m, Currency.AUD);
 var m2 = Money<decimal>(-42m, Currency.AUD);
@@ -149,6 +155,7 @@ the interface `ICurrencyConverter<T>` available in the `Money` namespace. The ge
 `T` here is actually the type you are using to represent money. As an example, if you are
 using `decimal` (a pretty good choice for almost all real life scenarios) to represent
 the amount in `Money`, then your currency converter should look something like:
+
 ```csharp
 public class MyCurrencyConverter : ICurrencyConverter<decimal>
 {
@@ -215,6 +222,7 @@ they are likely to be slow. So, calling it to conver `10 USD -> AUD` and then ag
 `3 USD -> AUD` seems like a very bad choice. To eliminate this issue of your
 currency converter (!), I have provided a magical wrapper class called `CachedCurrencyConverter`.
 The way you use it is:
+
 ```csharp
 public class MyCurrencyConverter : ICurrencyConverter<decimal>
 {
@@ -251,11 +259,13 @@ represent the Money amount (and, it better be `decimal`),
 here's is a nice trick you can do.
 
 Inside your namespace declaration, type:
+
 ```csharp
 using Money = Money<decimal>;
 ```
 
 Then, you will be able to use it in a simplified form as:
+
 ```csharp
 var m1 = new Money(42m, Currency.USD);
 var m2 = new Money(100m, Currency.AUD);
