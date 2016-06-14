@@ -14,7 +14,7 @@ This is an experimental project began few days ago when I accepted a challenge b
 
 So, I ended up creating a [github project](https://github.com/zpbappi/underscore-net). Currently `_.once()` and `_.debounce()` methods are implemented and they are published to master branch. However, I will continue to implement other methods in [dev](https://github.com/zpbappi/underscore-net/tree/dev) branch. Once they are properly tested, they will eventually make their ways into master branch.
 
-I tried to keep the .NET version consistent with Underscore.js, as much as possible. However, Underscore.Net accepts Action as callback functions. Moreover, you can use generic Action<T>. So far, Actions containing up to 4 parameters are supported. For detail usage, please visit the tests in [Underscore.Specs](https://github.com/zpbappi/underscore-net/tree/dev/Underscore.Specs) folder of the github repo.
+I tried to keep the .NET version consistent with Underscore.js, as much as possible. However, Underscore.Net accepts Action as callback functions. Moreover, you can use generic Action&lt;T&gt;. So far, Actions containing up to 4 parameters are supported. For detail usage, please visit the tests in [Underscore.Specs](https://github.com/zpbappi/underscore-net/tree/dev/Underscore.Specs) folder of the github repo.
 
 Here is a sample usage of Underscore.Net methods implemented so far.
 
