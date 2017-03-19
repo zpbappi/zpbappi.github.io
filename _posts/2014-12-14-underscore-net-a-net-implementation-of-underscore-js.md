@@ -26,7 +26,7 @@ namespace TestMarkdownNamespace
     public class TestMarkdownClass
     {
         private readonly Action initApplication;
-        private readonly Action&lt;string, IMarkdownCompiler, IHtmlContent&gt; render;
+        private readonly Action<string, IMarkdownCompiler, IHtmlContent> render;
         private readonly IMarkdownCompiler markdownCompiler;
 
         public TestMarkdownClass()
