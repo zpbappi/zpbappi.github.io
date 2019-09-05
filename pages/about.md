@@ -12,7 +12,7 @@ If you would like to know more about my technical expertise, my
 profile is a better place. You may also want to check out my
 [github](https://github.com/zpbappi) activity.
 
-I am also certified as a [Professional Scrum Master](https://www.scrum.org/User-Profile/userId/155925).
+I am also certified as a [Professional Scrum Master](https://www.scrum.org/certificates/150077).
 
 I am always learning something. In March 2016, I have completed the Machine Learning course by 
 Stanford University on Coursera. I was extremely impressed and inspired by Andrew Ng's lectures (and, of course,
